@@ -17,7 +17,7 @@ class Message:
 
     def message(self):
         """
-        Message From the people that have been liked in the past.
+        Message From the people that have been liked in the past. 
         """
         pass
 
