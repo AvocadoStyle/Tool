@@ -15,3 +15,10 @@ class Message:
         self.browser_driver = browser_driver
         self.browser_action = BrowserAction(self.browser_driver)
 
+    def message(self):
+        """
+        Message From the people that have been liked in the past.
+        """
+        pass
+
+
