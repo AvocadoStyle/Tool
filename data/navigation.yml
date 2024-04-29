@@ -1,0 +1,6 @@
+- URL: "www.okcupid.com"
+  XPATHS:
+    XPATH_BODY: &body_xpath "/html/body"
+    XPATH_MAIN: |
+      *body_xpath hey
+    XPATH_ANOTHER_ELEMENT: "/div[2]/element"

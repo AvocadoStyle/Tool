@@ -17,10 +17,15 @@ class Like:
 
     def close_widget_superlike_suggest(self):
         try:
-            self.browser_driver.driver.find_element(By.XPATH, "/html/body/div[3]/div[1]/div/div/button[2]").click()
+            # self.browser_driver.driver.find_element(By.XPATH, "/html/body/div[3]/div[1]/div/div/button[2]").click()
+            WebDriverWait(self.browser_driver.driver, 10).until(
+                EC.presence_of_all_elements_located((By.XPATH, "/html/body/div[3]/div[1]/div/div/button[2]"))
+            ).click()
         except NoSuchElementException as e:
             print(f"There are not open pop-widgets,"
-                  f"Will not close any widget, Expected behavior, Good!")
+                  f"Will not close any widget, Expected behavior, Expected behavior!")
+        except TimeoutException as e:
+            print("There isn't pop-out widgets, Expected behavior!")
         except Exception as e:
             print("bad thing happend")
             self.browser_driver.driver_refresh()
@@ -79,3 +84,11 @@ class Like:
             self.browser_action.goto_discover_swipe_section()
         except Exception as e:
             raise Exception(f"Couldn't dislike, Check If you have the option to dislike") from e
+
+    def like_quantity(self, quantity):
+        print(f"----------------------- start like: quantity={quantity} -----------------------")
+        for count in range(quantity):
+
+            self.like()
+            print(f"like count={count+1}")
+

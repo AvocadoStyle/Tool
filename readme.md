@@ -1,7 +1,7 @@
 # OkCupid likes/dislikes BOT.
 by Eden Refaelov B.S.C Computer Science student.
 
-###1.) Use Selenium:
+### 
 This project uses selenium tool to automate a bot to like/dislike in the OkCupid.
 the chromedriver.exe is added too.
 ###2.) Driver(main):

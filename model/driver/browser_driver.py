@@ -12,9 +12,10 @@ class BrowserDriver:
         self.driver = None
         self.url_path_hanlder = UrlPath(url)
 
-    def setupDriver(self):
+    def setupDriver(self, user_cached_data=None):
         options = webdriver.ChromeOptions()
-        options.add_argument(r"user-data-dir=C:\Users\edenr\AppData\Local\Google\Chrome\User Data\Profile 1")
+        if user_cached_data:
+            options.add_argument(fr"user-data-dir={user_cached_data}")
         driver = webdriver.Chrome(executable_path=self.driver_path, chrome_options=options)
         driver.set_window_size(1900, 1024)
         driver.get(self.url_path_hanlder.url)
