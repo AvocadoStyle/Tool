@@ -8,12 +8,13 @@ from selenium.webdriver.support import expected_conditions as EC
 
 from model.Utilities.operation_utils import sleep_decorator
 from model.action.browser_action import BrowserAction
+from model.action.operation_action import OperationAction
+from model.driver.browser_driver import BrowserDriver
 
 
-class Like:
-    def __init__(self, browser_driver):
-        self.browser_driver = browser_driver
-        self.browser_action = BrowserAction(self.browser_driver)
+class Like(OperationAction):
+    def __init__(self, browser_driver: BrowserDriver, browser_action: BrowserAction):
+        super().__init__(browser_driver=browser_driver, browser_action=browser_action)
 
     def close_widget_superlike_suggest(self):
         try:
